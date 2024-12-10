@@ -1,8 +1,9 @@
-import Image from "next/image"
+import Image from "next/image";
+import styles from './avatar.module.css';
 
 export const Avartar = ({ name, imageSrc }) => {
     return (
-        <ul>
+        <ul className={styles.avatar}>
             <li>
                 <Image 
                     src={imageSrc} 
