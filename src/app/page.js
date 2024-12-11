@@ -1,4 +1,5 @@
 import { CarPost } from "@/components/CardPost";
+import logger from "@/looger";
 
 // const post = {
 //   "id": 1,
@@ -19,8 +20,12 @@ async function getAllPots() {
   const response = await fetch('http://localhost:3042/posts');
 
   if(!response.ok) {
-    console.log("Ops, alguma coisa ocorreu mal");
+    logger.error('Ops, alguma coisa correu mal');
+    return [];
   }
+
+  logger.info('Posts obtidos com sucesso');
+
   return response.json();
 }
 
