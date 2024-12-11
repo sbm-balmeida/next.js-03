@@ -1,5 +1,6 @@
 import { CarPost } from "@/components/CardPost";
 import logger from "@/looger";
+import styles from './page.module.css';
 
 // const post = {
 //   "id": 1,
@@ -33,7 +34,7 @@ export default async function Home() {
   const posts = await getAllPots();
 
   return (
-    <main>
+    <main className={styles.grid}>
       {posts.map(post => <CarPost post={post}/>)};      
     </main>
   );
