@@ -31,8 +31,9 @@ async function getAllPots(page) {
   return response.json();
 }
 
-export default async function Home() {
-  const { data: posts, prev, next } = await getAllPots(1);
+export default async function Home({ searchParams }) {
+  const currentPage = searchParams?.page || 1;
+  const { data: posts, prev, next } = await getAllPots(currentPage);
 
   return (
     <main className={styles.grid}>
