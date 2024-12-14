@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from './avatar.module.css';
 
-export const Avartar = ({ name, imageSrc }) => {
+export const Avatar = ({ name, imageSrc }) => {
     return (
         <ul className={styles.avatar}>
             <li>
