@@ -1,4 +1,4 @@
-import { CarPost } from "@/components/CardPost";
+import { CardPost } from "@/components/CardPost";
 import logger from "@/looger";
 import styles from './page.module.css';
 import Link from "next/link";
@@ -37,7 +37,7 @@ export default async function Home({ searchParams }) {
 
   return (
     <main className={styles.grid}>
-      {posts.map(post => <CarPost key={post.id} post={post}/>)}
+      {posts.map(post => <CardPost key={post.id} post={post}/>)}
       
       <div className={styles.links}>
         {prev && <Link href={`/?page=${prev}`}>Página anterior</Link>}

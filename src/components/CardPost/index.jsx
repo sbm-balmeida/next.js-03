@@ -1,19 +1,18 @@
-import Image from "next/image";
-import { Avartar } from "../Avatar";
-import styles from './cardpost.module.css';
-import Link from "next/link";
+import Image from "next/image"
+import styles from './cardpost.module.css'
+import Link from "next/link"
+import { Avatar } from "../Avatar"
 
-export const CarPost = ({ post }) => {
+export const CardPost = ({ post, highlight }) => {
     return (
         <Link href={`/posts/${post.slug}`} className={styles.link}>
-            <article className={styles.card}>
+             <article className={styles.card} style={{ width: highlight ? 993 : 486}}>
                 <header className={styles.header}>
-                    <figure>
+                    <figure style={{ height: highlight ? 300 : 133}}>
                         <Image
                             src={post.cover}
-                            width={438}
-                            height={133}
-                            alt={`Capa do post de título: ${post.title}`}
+                            fill
+                            alt={`Capa do post de titulo: ${post.title}`}
                         />
                     </figure>
                 </header>
@@ -22,7 +21,7 @@ export const CarPost = ({ post }) => {
                     <p>{post.body}</p>
                 </section>
                 <footer className={styles.footer}>
-                    <Avartar
+                    <Avatar
                         imageSrc={post.author.avatar}
                         name={post.author.username}
                     />
